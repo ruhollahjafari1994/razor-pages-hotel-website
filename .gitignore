@@ -1,0 +1,16 @@
+# --- original purchased HTML template (not redistributed here) ---
+/*.html
+/assets/
+
+# --- .NET build output ---
+RoohollahJafari.Web/bin/
+RoohollahJafari.Web/obj/
+
+# --- IDE / OS ---
+.vs/
+.vscode/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
+.DS_Store

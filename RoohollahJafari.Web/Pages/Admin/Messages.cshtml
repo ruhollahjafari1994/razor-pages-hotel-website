@@ -1,0 +1,122 @@
+@page "/admin/messages"
+@model RoohollahJafari.Web.Pages.Admin.MessagesModel
+@{
+    ViewData["Title"] = "Admin Dashboard - Roohollah Jafari";
+    var fmt = (DateTime d) => d.ToLocalTime().ToString("MMM d, yyyy HH:mm");
+}
+<style>
+    .admin-wrap { padding: 60px 0 100px; font-family: 'Plus Jakarta Sans', sans-serif; color: #1a1a2e; }
+    .admin-wrap h1 { font-family: 'Gilda Display', serif; font-size: 42px; margin-bottom: 8px; }
+    .admin-sub { color: #6b7280; margin-bottom: 32px; }
+    .stat-row { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 38px; }
+    .stat-card { flex: 1; min-width: 180px; background: #f6f7f4; border: 1px solid #e7e9e3; border-radius: 14px; padding: 22px 24px; }
+    .stat-card .num { font-size: 34px; font-weight: 700; color: #5b6b4f; }
+    .stat-card .lbl { color: #6b7280; font-size: 14px; margin-top: 4px; }
+    .admin-card { background: #fff; border: 1px solid #e7e9e3; border-radius: 14px; padding: 26px 28px; margin-bottom: 26px; box-shadow: 0 6px 24px rgba(0,0,0,.04); }
+    .admin-card h2 { font-family: 'Gilda Display', serif; font-size: 26px; margin-bottom: 16px; }
+    .admin-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .admin-table th { text-align: left; padding: 10px 12px; background: #f6f7f4; color: #5b6b4f; text-transform: uppercase; font-size: 12px; letter-spacing: .05em; }
+    .admin-table td { padding: 11px 12px; border-bottom: 1px solid #eef0eb; vertical-align: top; }
+    .admin-table tr:last-child td { border-bottom: none; }
+    .empty { color: #9ca3af; font-style: italic; padding: 14px 12px; }
+    .pill { display: inline-block; background: #eef3ea; color: #5b6b4f; border-radius: 999px; padding: 3px 12px; font-size: 12px; }
+</style>
+<div class="container admin-wrap">
+    <h1>Admin Dashboard</h1>
+    <p class="admin-sub">Live data from the SQL database — contact forms, booking requests, comments and newsletter subscribers.</p>
+
+    <div class="stat-row">
+        <div class="stat-card"><div class="num">@Model.Contacts.Count</div><div class="lbl">Contact messages</div></div>
+        <div class="stat-card"><div class="num">@Model.Bookings.Count</div><div class="lbl">Booking requests</div></div>
+        <div class="stat-card"><div class="num">@Model.Comments.Count</div><div class="lbl">Blog comments</div></div>
+        <div class="stat-card"><div class="num">@Model.Subscribers.Count</div><div class="lbl">Subscribers</div></div>
+    </div>
+
+    <div class="admin-card">
+        <h2>Contact Messages <span class="pill">/api/contact</span></h2>
+        @if (Model.Contacts.Count == 0)
+        {
+            <div class="empty">No messages yet — submit the contact form and refresh.</div>
+        }
+        else
+        {
+            <table class="admin-table">
+                <thead><tr><th>#</th><th>Name</th><th>Email</th><th>Phone</th><th>Subject</th><th>Message</th><th>Received</th></tr></thead>
+                <tbody>
+                @foreach (var m in Model.Contacts)
+                {
+                    <tr>
+                        <td>@m.Id</td><td>@m.Name</td><td>@m.Email</td><td>@(m.Phone ?? "-")</td><td>@(m.Subject ?? "-")</td>
+                        <td>@(m.Message ?? "-")</td><td>@fmt(m.CreatedAt)</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+    </div>
+
+    <div class="admin-card">
+        <h2>Booking Requests <span class="pill">/api/bookings</span></h2>
+        @if (Model.Bookings.Count == 0)
+        {
+            <div class="empty">No booking requests yet.</div>
+        }
+        else
+        {
+            <table class="admin-table">
+                <thead><tr><th>#</th><th>Name</th><th>Email</th><th>Check-in</th><th>Check-out</th><th>Details</th><th>Received</th></tr></thead>
+                <tbody>
+                @foreach (var b in Model.Bookings)
+                {
+                    <tr>
+                        <td>@b.Id</td><td>@b.Name</td><td>@b.Email</td>
+                        <td>@(b.CheckIn?.ToString("MMM d, yyyy") ?? "-")</td>
+                        <td>@(b.CheckOut?.ToString("MMM d, yyyy") ?? "-")</td>
+                        <td>@(b.Details ?? "-")</td><td>@fmt(b.CreatedAt)</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+    </div>
+
+    <div class="admin-card">
+        <h2>Blog Comments <span class="pill">/api/comments</span></h2>
+        @if (Model.Comments.Count == 0)
+        {
+            <div class="empty">No comments yet.</div>
+        }
+        else
+        {
+            <table class="admin-table">
+                <thead><tr><th>#</th><th>Name</th><th>Email</th><th>Comment</th><th>Received</th></tr></thead>
+                <tbody>
+                @foreach (var c in Model.Comments)
+                {
+                    <tr><td>@c.Id</td><td>@c.Name</td><td>@c.Email</td><td>@(c.Message ?? "-")</td><td>@fmt(c.CreatedAt)</td></tr>
+                }
+                </tbody>
+            </table>
+        }
+    </div>
+
+    <div class="admin-card">
+        <h2>Newsletter Subscribers <span class="pill">/api/subscribers</span></h2>
+        @if (Model.Subscribers.Count == 0)
+        {
+            <div class="empty">No subscribers yet.</div>
+        }
+        else
+        {
+            <table class="admin-table">
+                <thead><tr><th>#</th><th>Email</th><th>Subscribed</th></tr></thead>
+                <tbody>
+                @foreach (var s in Model.Subscribers)
+                {
+                    <tr><td>@s.Id</td><td>@s.Email</td><td>@fmt(s.CreatedAt)</td></tr>
+                }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

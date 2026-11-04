@@ -1,0 +1,106 @@
+@{
+    // ---------- Defaults (pages can override via ViewData) ----------
+    ViewData["Title"] ??= "Roohollah Jafari - Hotel & Resort";
+    ViewData["Description"] ??= "Roohollah Jafari - Hotel, Resort & Rooms";
+    ViewData["HeaderClass"] ??= "header-area header-one page-header transparent-header";
+    ViewData["TopBar"] ??= false;
+    ViewData["BrandLogo"] ??= "/assets/images/logo/logo-white.png";
+    ViewData["Footer"] ??= "v1";
+
+    var footerVariant = ViewData["Footer"] as string ?? "v1";
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--====== Required meta tags ======-->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="@ViewData["Description"]">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--====== Title ======-->
+        <title>@ViewData["Title"]</title>
+        <!--====== Favicon Icon ======-->
+        <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+        <!--====== Google Fonts ======-->
+        <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:ital,wght@@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <!--====== FontAwesome css ======-->
+        <link rel="stylesheet" href="/assets/fonts/fontawesome/css/all.min.css">
+        <!--====== Bootstrap css ======-->
+        <link rel="stylesheet" href="/assets/css/plugins/bootstrap.min.css">
+        <!--====== Slick-popup css ======-->
+        <link rel="stylesheet" href="/assets/css/plugins/slick.css">
+        <!--====== Magnific-popup css ======-->
+        <link rel="stylesheet" href="/assets/css/plugins/magnific-popup.css">
+        <!--====== Nice Select css ======-->
+        <link rel="stylesheet" href="/assets/css/plugins/nice-select.css">
+        <!--====== Aos css ======-->
+        <link rel="stylesheet" href="/assets/css/plugins/aos.css">
+        <!--====== Default css ======-->
+        <link rel="stylesheet" href="/assets/css/spacings.css">
+        <!--====== Default css ======-->
+        <link rel="stylesheet" href="/assets/css/style.css">
+        @await RenderSectionAsync("Styles", required: false)
+    </head>
+    <body>
+        <!--====== Start Preloader ======-->
+        <div class="preloader">
+            <div class="loading-wrapper">
+                <div class="loading"></div>
+                <div id="loading-icon"><img src="/assets/images/loader.png" alt="loader"></div>
+            </div>
+        </div><!--====== End Preloader ======-->
+        <!--====== Start Overlay ======-->
+        <div class="offcanvas__overlay"></div>
+        <!--=== Start  Header Area  ===-->
+        @await Html.PartialAsync("_Header", null, ViewData)
+        <!--=== End  Header Area  ===-->
+        @RenderBody()
+        <!--======  Start Footer  ======-->
+        @if (footerVariant == "v2")
+        {
+            @await Html.PartialAsync("_FooterTwo")
+        }
+        else if (footerVariant == "v3")
+        {
+            @await Html.PartialAsync("_FooterThree")
+        }
+        else
+        {
+            @await Html.PartialAsync("_Footer")
+        }
+        <!--======  End Footer  ======-->
+        <!--====== Back To Top  ======-->
+        <div class="back-to-top"><i class="far fa-angle-up"></i></div>
+        <!--====== Jquery js ======-->
+        <script src="/assets/js/plugins/jquery-3.7.1.min.js"></script>
+        <!--====== Bootstrap js ======-->
+        <script src="/assets/js/plugins/popper.min.js"></script>
+        <!--====== Bootstrap js ======-->
+        <script src="/assets/js/plugins/bootstrap.min.js"></script>
+        <!--====== Slick js ======-->
+        <script src="/assets/js/plugins/slick.min.js"></script>
+        <!--====== Magnific js ======-->
+        <script src="/assets/js/plugins/jquery.magnific-popup.min.js"></script>
+        <!--====== Waypoint js ======-->
+        <script src="/assets/js/plugins/jquery.waypoints.js"></script>
+        <!--====== CounterUp js ======-->
+        <script src="/assets/js/plugins/jquery.counterup.min.js"></script>
+        <!--====== Nice Select js ======-->
+        <script src="/assets/js/plugins/jquery.nice-select.min.js"></script>
+        <!--====== ImagesLoaded js ======-->
+        <script src="/assets/js/plugins/imagesloaded.min.js"></script>
+        <!--====== Isotope js ======-->
+        <script src="/assets/js/plugins/isotope.min.js"></script>
+        <!--====== Aos js ======-->
+        <script src="/assets/js/plugins/aos.js"></script>
+        <!--====== Common js ======-->
+        <script src="/assets/js/theme.js"></script>
+        <script>
+            // Newsletter subscribe feedback (the /subscribe endpoint redirects back with ?subscribed=1)
+            if (window.location.search.indexOf('subscribed=1') !== -1) {
+                alert('Thanks for subscribing to our newsletter!');
+            }
+        </script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

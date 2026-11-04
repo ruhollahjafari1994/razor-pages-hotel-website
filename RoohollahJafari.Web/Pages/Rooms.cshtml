@@ -1,0 +1,441 @@
+@page "/rooms.html"
+@model RoohollahJafari.Web.Pages.RoomsModel
+@{
+    ViewData["Title"] = "Rooms Grid - Roohollah Jafari";
+    ViewData["Description"] = "Rooms Grid - Roohollah Jafari hotel & resort.";
+}
+
+
+        <main>
+            <!--======  Start Page Hero Section  ======-->
+            <section class="page-hero bg_cover p-r z-1" data-src="/assets/images/innerpage/bg/page-bg.jpg">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!--=== Page Content ===-->
+                            <div class="page-content text-center">
+                                <h1>Our Rooms & Suits</h1>
+                                <h6>EXPLORE Roohollah Jafari LUXURY rooms</h6>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li> Rooms & Suits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Page Hero Section  ======-->
+            @if (TempData["SearchInfo"] != null)
+            {
+                <section style="background:#eef3ea;padding:16px 0;border-bottom:1px solid #e0e6da;">
+                    <div class="container text-center">
+                        <p style="margin:0;color:#5b6b4f;font-weight:600;">@TempData["SearchInfo"]</p>
+                    </div>
+                </section>
+            }
+            <!--======  Start Room Section  ======-->
+            <section class="luxivo-room-sec pt-110 pb-80">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-7">
+                            <!-- Section Title -->
+                            <div class="section-title text-center mb-60">
+                                <span class="line d-block mb-10"><img src="/assets/images/home-one/gallery/d-line.png" alt="line"></span>
+                                <span class="sub-title">LUXURY COMFORT</span>
+                                <h2>Featured Rooms & Suits</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Luxivo Filter Nav -->
+                            <div class="luxivo-filter-nav text-center mb-60">
+                                <ul class="filter-nav-items">
+                                    <li class="active" data-filter="*">Show All</li>
+                                    <li data-filter=".cat1">luxury Room</li>
+                                    <li data-filter=".cat2">Suits Room</li>
+                                    <li data-filter=".cat3">Deluxe Room</li>
+                                    <li data-filter=".cat4">Twine Rooms</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- Luxivo Filter -->
+                    <div class="luxivo-isotope">
+                        <div class="row isotope-grid">
+                            <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 isotope-filter-item cat1">
+                                <!--=== Luxivo Room Item ===-->
+                                <div class="luxivo-room-item style-four mb-40">
+                                    <div class="room-image">
+                                        <img src="/assets/images/innerpage/room/room-img5.jpg" alt="room image">
+                                        <div class="hover-content-wrap">
+                                            <div class="hover-content">
+                                                <div class="ratings">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <h4><a href="room-details.html">Royal Prestige Suite</a></h4>
+                                                <div class="price">$350<span class="time">/Per Night</span></div>
+                                                <div class="room-meta">
+                                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                                </div>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                            <div class="content">
+                                                <h4><a href="room-details.html">Royal Prestige Suite</a></h4>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 isotope-filter-item cat2">
+                                <!--=== Luxivo Room Item ===-->
+                                <div class="luxivo-room-item style-four mb-40">
+                                    <div class="room-image">
+                                        <img src="/assets/images/innerpage/room/room-img6.jpg" alt="room image">
+                                        <div class="hover-content-wrap">
+                                            <div class="hover-content">
+                                                <div class="ratings">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <h4><a href="room-details.html">Exclusive Weekend Getaway</a></h4>
+                                                <div class="price">$350<span class="time">/Per Night</span></div>
+                                                <div class="room-meta">
+                                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                                </div>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                            <div class="content">
+                                                <h4><a href="room-details.html">Exclusive Weekend Getaway</a></h4>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 isotope-filter-item cat3">
+                                <!--=== Luxivo Room Item ===-->
+                                <div class="luxivo-room-item style-four mb-40">
+                                    <div class="room-image">
+                                        <img src="/assets/images/innerpage/room/room-img7.jpg" alt="room image">
+                                        <div class="hover-content-wrap">
+                                            <div class="hover-content">
+                                                <div class="ratings">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <h4><a href="room-details.html">Deluxe Family Rooms</a></h4>
+                                                <div class="price">$350<span class="time">/Per Night</span></div>
+                                                <div class="room-meta">
+                                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                                </div>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                            <div class="content">
+                                                <h4><a href="room-details.html">Deluxe Family Rooms</a></h4>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 isotope-filter-item cat4">
+                                <!--=== Luxivo Room Item ===-->
+                                <div class="luxivo-room-item style-four mb-40">
+                                    <div class="room-image">
+                                        <img src="/assets/images/innerpage/room/room-img8.jpg" alt="room image">
+                                        <div class="hover-content-wrap">
+                                            <div class="hover-content">
+                                                <div class="ratings">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <h4><a href="room-details.html">Luxury Signature Suites</a></h4>
+                                                <div class="price">$350<span class="time">/Per Night</span></div>
+                                                <div class="room-meta">
+                                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                                </div>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                            <div class="content">
+                                                <h4><a href="room-details.html">Luxury Signature Suites</a></h4>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 isotope-filter-item cat3">
+                                <!--=== Luxivo Room Item ===-->
+                                <div class="luxivo-room-item style-four mb-40">
+                                    <div class="room-image">
+                                        <img src="/assets/images/innerpage/room/room-img9.jpg" alt="room image">
+                                        <div class="hover-content-wrap">
+                                            <div class="hover-content">
+                                                <div class="ratings">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <h4><a href="room-details.html">Signature Suites Rooms</a></h4>
+                                                <div class="price">$350<span class="time">/Per Night</span></div>
+                                                <div class="room-meta">
+                                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                                </div>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                            <div class="content">
+                                                <h4><a href="room-details.html">Signature Suites Rooms</a></h4>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 isotope-filter-item cat2">
+                                <!--=== Luxivo Room Item ===-->
+                                <div class="luxivo-room-item style-four mb-40">
+                                    <div class="room-image">
+                                        <img src="/assets/images/innerpage/room/room-img10.jpg" alt="room image">
+                                        <div class="hover-content-wrap">
+                                            <div class="hover-content">
+                                                <div class="ratings">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <h4><a href="room-details.html">Industry Experience Hotel</a></h4>
+                                                <div class="price">$350<span class="time">/Per Night</span></div>
+                                                <div class="room-meta">
+                                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                                </div>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                            <div class="content">
+                                                <h4><a href="room-details.html">Industry Experience Hotel</a></h4>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 isotope-filter-item cat4">
+                                <!--=== Luxivo Room Item ===-->
+                                <div class="luxivo-room-item style-four mb-40">
+                                    <div class="room-image">
+                                        <img src="/assets/images/innerpage/room/room-img11.jpg" alt="room image">
+                                        <div class="hover-content-wrap">
+                                            <div class="hover-content">
+                                                <div class="ratings">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <h4><a href="room-details.html">Tropical Garden Room</a></h4>
+                                                <div class="price">$350<span class="time">/Per Night</span></div>
+                                                <div class="room-meta">
+                                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                                </div>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                            <div class="content">
+                                                <h4><a href="room-details.html">Tropical Garden Room</a></h4>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 isotope-filter-item cat1">
+                                <!--=== Luxivo Room Item ===-->
+                                <div class="luxivo-room-item style-four mb-40">
+                                    <div class="room-image">
+                                        <img src="/assets/images/innerpage/room/room-img12.jpg" alt="room image">
+                                        <div class="hover-content-wrap">
+                                            <div class="hover-content">
+                                                <div class="ratings">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <h4><a href="room-details.html">Exclusive Deluxe Rooms</a></h4>
+                                                <div class="price">$350<span class="time">/Per Night</span></div>
+                                                <div class="room-meta">
+                                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                                </div>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                            <div class="content">
+                                                <h4><a href="room-details.html">Exclusive Deluxe Rooms</a></h4>
+                                                <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS <i class="far fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Room Section  ======-->
+            <!--======  Start Counter Section  ======-->
+            <div class="luxivo-counter_one bg_cover pt-110 pb-70" data-src="/assets/images/home-one/bg/counter-bg.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <!--=== Luxivo Counter Item ===-->
+                            <div class="luxivo-counter-item style-one mb-40">
+                                <div class="content">
+                                    <h2><span class="counter">635</span>+</h2>
+                                    <p>Luxury Rooms</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <!--=== Luxivo Counter Item ===-->
+                            <div class="luxivo-counter-item style-one mb-40">
+                                <div class="content">
+                                    <h2><span class="counter">85</span>k+</h2>
+                                    <p>Happy Guest</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <!--=== Luxivo Counter Item ===-->
+                            <div class="luxivo-counter-item style-one mb-40">
+                                <div class="content">
+                                    <h2><span class="counter">2.3</span>k+</h2>
+                                    <p>Five Star Ratings</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <!--=== Luxivo Counter Item ===-->
+                            <div class="luxivo-counter-item style-one mb-40">
+                                <div class="content">
+                                    <h2><span class="counter">2.8</span>m</h2>
+                                    <p>Served Breakfast</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--======  End Counter Section  ======-->
+            <!--======  Start Features Section  ======-->
+            <section class="luxivo-features_two pt-120 pb-120">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-10">
+                            <div class="section-title text-center mb-60">
+                                <span class="line d-block mb-10"><img src="/assets/images/home-one/gallery/d-line.png" alt="line"></span>
+                                <span class="sub-title">OUR SERVICES</span>
+                                <h2>Improving Your Visit With Special Offers</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-xl-4 col-md-6 order-2 order-xl-1">
+                            <!-- Features List -->
+                            <div class="features-list list-left mb-5 mb-lg-0">
+                                <!-- Luxivo Iocnic Box -->
+                                <div class="luxivo-iconic-box style-two">
+                                    <div class="icon">
+                                        <img src="/assets/images/innerpage/icon/icon-4.png" alt="icon">
+                                    </div>
+                                    <div class="content">
+                                        <h4 class="title">Airport Transfer</h4>
+                                        <p>Hassle-free pick-up and drop-off services for a smooth travel experience. and round-the-clock monitoring to ensure.</p>
+                                    </div>
+                                </div>
+                                <!-- Luxivo Iocnic Box -->
+                                <div class="luxivo-iconic-box style-two">
+                                    <div class="icon">
+                                        <img src="/assets/images/innerpage/icon/icon-5.png" alt="icon">
+                                    </div>
+                                    <div class="content">
+                                        <h4 class="title">Smart Room Access</h4>
+                                        <p>Experience keyless entry and smart controls for lights, temperature, and entertainment, all at your fingertips.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-12 order-1 order-xl-2">
+                            <!-- Luxivo Image Box -->
+                            <div class="luxivo-image-box mb-5 mb-xl-0">
+                                <div class="shape"><img src="/assets/images/innerpage/gallery/feat-shape.png" alt="shape"></div>
+                                <div class="luxivo-image">
+                                    <img src="/assets/images/innerpage/gallery/feature-img1.jpg" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 order-3">
+                            <!-- Features List -->
+                            <div class="features-list list-right">
+                                <!-- Luxivo Iocnic Box -->
+                                <div class="luxivo-iconic-box style-two">
+                                    <div class="icon">
+                                        <img src="/assets/images/innerpage/icon/icon-5.png" alt="icon">
+                                    </div>
+                                    <div class="content">
+                                        <h4 class="title">24/7 Front Desk Assistance</h4>
+                                        <p>Our friendly staff is available around the clock to assist you with check-ins, concierge services, bookings, and inquiries.</p>
+                                    </div>
+                                </div>
+                                <!-- Luxivo Iocnic Box -->
+                                <div class="luxivo-iconic-box style-two">
+                                    <div class="icon">
+                                        <img src="/assets/images/innerpage/icon/icon-6.png" alt="icon">
+                                    </div>
+                                    <div class="content">
+                                        <h4 class="title">Room Service</h4>
+                                        <p>Relax and dine in the comfort of your room with our 24/7 room service offering a variety of dishes and beverages.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Features Section  ======-->
+        </main>
+        

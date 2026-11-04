@@ -1,0 +1,174 @@
+@page "/blog-grid.html"
+@model RoohollahJafari.Web.Pages.BlogGridModel
+@{
+    ViewData["Title"] = "Blog Grid - Roohollah Jafari";
+    ViewData["Description"] = "Blog Grid - Roohollah Jafari hotel & resort.";
+}
+
+
+        <main>
+            <!--======  Start Page Hero Section  ======-->
+            <section class="page-hero bg_cover p-r z-1" data-src="/assets/images/innerpage/bg/page-bg.jpg">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!--=== Page Content ===-->
+                            <div class="page-content text-center">
+                                <h1>Blog Grid</h1>
+                                <h6>Discover The blog where luxury, comfort, and adventure come together.</h6>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>Blog Grid</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Page Hero Section  ======-->
+            @if (ViewData["Search"] != null)
+            {
+                <section style="background:#eef3ea;padding:16px 0;border-bottom:1px solid #e0e6da;">
+                    <div class="container text-center">
+                        <p id="search-banner-text" style="margin:0;color:#5b6b4f;font-weight:600;">Showing results for: &ldquo;@ViewData["Search"]&rdquo;</p>
+                    </div>
+                </section>
+            }
+            <!--======  Start Blog Section  ======-->
+            <section class="luxivo-blog-grid-sec pt-120 pb-120">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6">
+                            <!--=== Luxivo Blog Post ===-->
+                            <div class="luxivo-blog-post-item style-one mb-30" data-aos="fade-up" data-aos-duration="800">
+                                <div class="post-thumbnail">
+                                    <img src="/assets/images/innerpage/blog/blog-grid1.jpg" alt="Blog Image">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i>By<a href="#">Admin</a></span>
+                                        <span><i class="far fa-comments"></i><a href="#">(03) Comments</a></span>
+                                    </div>
+                                    <h4><a href="blog-details.html">Inside the Luxury What Makes Our Hotel Unique</a></h4>
+                                    <a href="blog-details.html" class="theme-btn style-two">Read More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <!--=== Luxivo Blog Post ===-->
+                            <div class="luxivo-blog-post-item style-one mb-30" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="post-thumbnail">
+                                    <img src="/assets/images/innerpage/blog/blog-grid2.jpg" alt="Blog Image">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i>By<a href="#">Admin</a></span>
+                                        <span><i class="far fa-comments"></i><a href="#">(03) Comments</a></span>
+                                    </div>
+                                    <h4><a href="blog-details.html">Unveiling the Charm Inside Our Signature Experience</a></h4>
+                                    <a href="blog-details.html" class="theme-btn style-two">Read More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <!--=== Luxivo Blog Post ===-->
+                            <div class="luxivo-blog-post-item style-one mb-30" data-aos="fade-up" data-aos-duration="1200">
+                                <div class="post-thumbnail">
+                                    <img src="/assets/images/innerpage/blog/blog-grid3.jpg" alt="Blog Image">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i>By<a href="#">Admin</a></span>
+                                        <span><i class="far fa-comments"></i><a href="#">(03) Comments</a></span>
+                                    </div>
+                                    <h4><a href="blog-details.html">Where Luxury Meets Personality Our Hotel Story</a></h4>
+                                    <a href="blog-details.html" class="theme-btn style-two">Read More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <!--=== Luxivo Blog Post ===-->
+                            <div class="luxivo-blog-post-item style-one mb-30" data-aos="fade-up" data-aos-duration="1400">
+                                <div class="post-thumbnail">
+                                    <img src="/assets/images/innerpage/blog/blog-grid4.jpg" alt="Blog Image">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i>By<a href="#">Admin</a></span>
+                                        <span><i class="far fa-comments"></i><a href="#">(03) Comments</a></span>
+                                    </div>
+                                    <h4><a href="blog-details.html">Discover the Difference Inside Our World of Comfort</a></h4>
+                                    <a href="blog-details.html" class="theme-btn style-two">Read More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <!--=== Luxivo Blog Post ===-->
+                            <div class="luxivo-blog-post-item style-one mb-30" data-aos="fade-up" data-aos-duration="1600">
+                                <div class="post-thumbnail">
+                                    <img src="/assets/images/innerpage/blog/blog-grid5.jpg" alt="Blog Image">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i>By<a href="#">Admin</a></span>
+                                        <span><i class="far fa-comments"></i><a href="#">(03) Comments</a></span>
+                                    </div>
+                                    <h4><a href="blog-details.html">A Touch Above The Distinctive Features of Our Hotel</a></h4>
+                                    <a href="blog-details.html" class="theme-btn style-two">Read More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <!--=== Luxivo Blog Post ===-->
+                            <div class="luxivo-blog-post-item style-one mb-30" data-aos="fade-up" data-aos-duration="1800">
+                                <div class="post-thumbnail">
+                                    <img src="/assets/images/innerpage/blog/blog-grid6.jpg" alt="Blog Image">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i>By<a href="#">Admin</a></span>
+                                        <span><i class="far fa-comments"></i><a href="#">(03) Comments</a></span>
+                                    </div>
+                                    <h4><a href="blog-details.html">Inside the Experience Why Our Guests Return</a></h4>
+                                    <a href="blog-details.html" class="theme-btn style-two">Read More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!--=== Theme Pagination ===-->
+                            <div class="theme-pagination text-center mt-30" data-aos="fade-up" data-aos-duration="2000">
+                                <ul>
+                                    <li><a href="#"><i class="far fa-arrow-left"></i></a></li>
+                                    <li><a href="#">01</a></li>
+                                    <li><a href="#">02</a></li>
+                                    <li><a href="#">03</a></li>
+                                    <li><a href="#"><i class="far fa-arrow-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Blog Section  ======-->
+        </main>
+
+@section Scripts {
+    <script>
+        (function () {
+            var q = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ViewData["Search"] as string));
+            if (!q) return;
+            q = q.toLowerCase();
+            var items = document.querySelectorAll('.luxivo-blog-post-item');
+            var shown = 0;
+            for (var i = 0; i < items.length; i++) {
+                var match = items[i].textContent.toLowerCase().indexOf(q) !== -1;
+                items[i].style.display = match ? '' : 'none';
+                if (match) shown++;
+            }
+            var banner = document.getElementById('search-banner-text');
+            if (banner && shown === 0) {
+                banner.textContent = 'No posts matched \u201C' + q + '\u201D \u2014 try another keyword.';
+            }
+        })();
+    </script>
+}

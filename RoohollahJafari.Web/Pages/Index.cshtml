@@ -1,0 +1,954 @@
+@page "/"
+@model RoohollahJafari.Web.Pages.IndexModel
+@{
+    ViewData["Title"] = "Roohollah Jafari - Hotel & Resort";
+    ViewData["Description"] = "Roohollah Jafari - hotel, resort & rooms booking.";
+    ViewData["HeaderClass"] = "header-area header-one transparent-header";
+}
+
+
+        <!--======  Smooth Wrapper  ======-->
+        <main>
+            <!--======  Start Hero Section  ======-->
+            <section class="luxivo-hero">
+                <div class="luxivo-hero_one p-r z-1 bg_cover" data-src="/assets/images/home-one/hero/hero-bg.jpg">
+                    <div class="hero-image hero-image_one" data-aos="fade-up" data-aos-duration="2500" data-aos-delay="10"><img src="/assets/images/home-one/hero/hero-img1.jpg" alt="hero image"></div>
+                    <div class="hero-image hero-image_two" data-aos="fade-down" data-aos-duration="3000" data-aos-delay="20"><img src="/assets/images/home-one/hero/hero-img2.jpg" alt="hero image"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- Hero Content -->
+                                <div class="hero-content text-center text-xl-start mb-25">
+                                    <h1 data-aos="fade-left" data-aos-duration="2500">Our Luxury <br> Resort & Hotel</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <!-- Text Box -->
+                                <div class="text-box" data-aos="fade-up" data-aos-duration="2600">
+                                    <p>Immerse yourself in luxury and freshness with stunning ocean views and beach just a few steps away. Enjoy the sweet breath of the sea with elegant and luxurious rooms, opposite the beach voted by Forbes magazine </p>
+                                    <div class="hero-button">
+                                        <a href="rooms.html" class="theme-btn style-one">Explore Rooms<i class="far fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Avatar Box -->
+                        <div class="luxivo-avatar-box style-one" data-aos="fade-up" data-aos-duration="2000">
+                            <h6>Beautiful Destinations</h6>
+                            <div class="avatar-text-box">
+                                <div class="avatar-list">
+                                    <ul>
+                                        <li><img src="/assets/images/home-one/hero/avatar-img1.jpg" alt="avatar"></li>
+                                        <li><img src="/assets/images/home-one/hero/avatar-img2.jpg" alt="avatar"></li>
+                                        <li><img src="/assets/images/home-one/hero/avatar-img3.jpg" alt="avatar"></li>
+                                        <li><span>10+</span></li>
+                                    </ul>
+                                </div>
+                                <div class="text">100k+ users have visited our platform</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Hero Section  ======-->
+            <!--======  Start Search Section  ======-->
+            <section class="luxivo-search_one pb-60">
+                <div class="container">
+                    <!-- Luxivo Search Wrapper -->
+                    <div class="luxivo-search-wrapper">
+                        <div class="shape shape-one"><img src="/assets/images/home-one/gallery/shape1.png" alt="shape"></div>
+                        <div class="shape shape-two"><img src="/assets/images/home-one/gallery/shape2.png" alt="shape"></div>
+                        <div class="shape shape-three"><img src="/assets/images/home-one/gallery/shape3.png" alt="shape"></div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- Text Box -->
+                                <div class="text-box text-center text-xl-start">
+                                    <h3 class="mb-20">Find The Best Place</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Form -->
+                        @if (TempData["Success"] != null)
+                        {
+                            <div class="alert alert-success" role="alert">@TempData["Success"]</div>
+                        }
+                        @if (TempData["Error"] != null)
+                        {
+                            <div class="alert alert-danger" role="alert">@TempData["Error"]</div>
+                        }
+                        <form method="post" asp-page-handler="Search">
+                            <div class="row align-items-end">
+                                <div class="col-xl-10">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="form-group">
+                                                <label>Check In</label>
+                                                <input type="date" class="form_control" name="CheckIn" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="form-group">
+                                                <label>Check Out</label>
+                                                <input type="date" class="form_control" name="CheckOut" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="form-group">
+                                                <label>Rooms</label>
+                                                <select class="wide" name="Rooms">
+                                                    <option value="01">01 Rooms</option>
+                                                    <option value="01">02 Rooms</option>
+                                                    <option value="01">03 Rooms</option>
+                                                    <option value="01">04 Rooms</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="form-group">
+                                                <label>Guests</label>
+                                                <select class="wide" name="Guests">
+                                                    <option value="01">02 Adults, 0 Child</option>
+                                                    <option value="01">02 Adults, 1 Child</option>
+                                                    <option value="01">04 Adults, 2 Child</option>
+                                                    <option value="01">06 Adults, 0 Child</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2">
+                                    <div class="luxivo-button mt-4 mt-xl-0 text-center text-xl-start">
+                                        <button class="theme-btn style-one">CHECK NOW</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section><!--======  End Search Section  ======-->
+            <!--======  Start About Section  ======-->
+            <section class="luxivo-about_one pt-120 pb-120">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-9">
+                            <!-- Luxivo Image Box -->
+                            <div class="luxivo-image-box">
+                                <div class="luxivo-image image_one" data-aos="fade-up" data-aos-duration="800">
+                                    <img src="/assets/images/home-one/about/about-img1.jpg" alt="about image">
+                                </div>
+                                <div class="luxivo-image image_two" data-aos="fade-up" data-aos-duration="1000">
+                                    <img src="/assets/images/home-one/about/about-img2.jpg" alt="about image">
+                                </div>
+                                <!-- Luxivo Custer Box -->
+                                <div class="luxivo-customer-box" data-aos="fade-up" data-aos-duration="1000">
+                                    <div class="content">
+                                        <h3>8k+</h3>
+                                        <p>Happy customer</p>
+                                    </div>
+                                </div>
+                                <!-- Experience Box -->
+                                <div class="luxivo-experience-box" data-aos="fade-down" data-aos-duration="1000">
+                                    <div class="content">
+                                        <h3>30+</h3>
+                                        <p>Years Of Experience</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-9">
+                            <!-- Luxivo Content Box -->
+                            <div class="luxivo-content-box mt-5 mt-xl-0">
+                                <!-- Section Title -->
+                                <div class="section-title">
+                                    <span class="line d-block mb-10" data-aos="fade-up" data-aos-duration="800"><img src="/assets/images/home-one/gallery/d-line.png" alt="line"></span>
+                                    <span class="sub-title" data-aos="fade-up" data-aos-duration="1000">About our hotel</span>
+                                    <h2 data-aos="fade-up" data-aos-duration="1200">Stay in a luxurious resort anywhere in the world.</h2>
+                                </div>
+                                <p>Roohollah Jafari Hotels Resort is more than just a luxury resort; it is a tranquil oasis in paradise. With its stunning location, luxurious accommodations, And exceptional dining options, it offers guests </p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <!-- Luxivo Iconic Left Box -->
+                                        <div class="luxivo-iconic-left-box style-one mb-40" data-aos="fade-up" data-aos-duration="1000">
+                                            <div class="icon">
+                                                <img src="/assets/images/home-one/icon/icon1.png" alt="icon">
+                                            </div>
+                                            <div class="content">
+                                                <h5>The Best Lighting</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Luxivo Iconic Left Box -->
+                                        <div class="luxivo-iconic-left-box style-one mb-40" data-aos="fade-up" data-aos-duration="1200">
+                                            <div class="icon">
+                                                <img src="/assets/images/home-one/icon/icon2.png" alt="icon">
+                                            </div>
+                                            <div class="content">
+                                                <h5>The Best Swimming</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Check List -->
+                                <ul class="check-list style-one mb-40" data-aos="fade-up" data-aos-duration="1400">
+                                    <li><i class="fas fa-badge-check"></i>Prime locations with stunning views</li>
+                                    <li><i class="fas fa-badge-check"></i>Handpicked room designs for modern living</li>
+                                </ul>
+                                <!-- Button -->
+                                <div class="luxivo-button-wrap" data-aos="fade-up" data-aos-duration="1600">
+                                    <div class="luxivo-button">
+                                        <a href="about.html" class="theme-btn style-one">DISCOVER MORE <i class="far fa-arrow-right"></i></a>
+                                    </div>
+                                    <div class="author-thumb-item">
+                                    <div class="author-thumb">
+                                            <img src="/assets/images/home-one/about/author-img1.png" alt="author image">
+                                        </div>
+                                        <div class="author-info">
+                                            <img src="/assets/images/home-one/about/sign.png" alt="sign">
+                                            <h5>Brooklyn Simmons</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End About Section  ======-->
+            <!--======  Start Room Section  ======-->
+            <section class="luxivo-room_one p-r z-1 pt-120 pb-120">
+                <div class="room-bg" data-src="/assets/images/home-one/bg/room-bg.jpg"></div>
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-xl-6 col-lg-8">
+                            <!-- Section Title -->
+                            <div class="section-title mb-45">
+                                <span class="line d-block mb-10" data-aos="fade-up" data-aos-duration="800"><img src="/assets/images/home-one/gallery/d-line.png" alt="line"></span>
+                                <span class="sub-title" data-aos="fade-up" data-aos-duration="1000">Rooms & Suites</span>
+                                <h2 data-aos="fade-up" data-aos-duration="1200">Rest in Comfort  Select From Our Suites & Rooms</h2>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-4">
+                            <div class="room-arrows mb-60"></div>
+                        </div>
+                    </div>
+                    <!-- Luxivo Room Slider -->
+                    <div class="room-slider" data-aos="fade-up" data-aos-duration="1000">
+                        <!-- Luxivo Room Item -->
+                        <div class="luxivo-room-item style-one">
+                            <div class="room-image">
+                                <img src="/assets/images/home-one/room/roomg-img1.jpg" alt="room image">
+                                <div class="rate"><i class="fas fa-star"></i>4.9</div>
+                            </div>
+                            <div class="room-content">
+                                <h4 class="title"><a href="room-details.html">Signature Suites Rooms</a></h4>
+                                <p>Experience a serene stay in our beautifully designed Deluxe Room   perfect </p>
+                                <div class="room-meta">
+                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                </div>
+                                <div class="room-bottom">
+                                    <div class="price">$250<span>/Per Night</span></div>
+                                    <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Room Item -->
+                        <div class="luxivo-room-item style-one">
+                            <div class="room-image">
+                                <img src="/assets/images/home-one/room/roomg-img2.jpg" alt="room image">
+                                <div class="rate"><i class="fas fa-star"></i>4.9</div>
+                            </div>
+                            <div class="room-content">
+                                <h4 class="title"><a href="room-details.html">Exclusive Deluxe Rooms</a></h4>
+                                <p>Experience a serene stay in our beautifully designed Deluxe Room   perfect </p>
+                                <div class="room-meta">
+                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                </div>
+                                <div class="room-bottom">
+                                    <div class="price">$320<span>/Per Night</span></div>
+                                    <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Room Item -->
+                        <div class="luxivo-room-item style-one">
+                            <div class="room-image">
+                                <img src="/assets/images/home-one/room/roomg-img3.jpg" alt="room image">
+                                <div class="rate"><i class="fas fa-star"></i>4.9</div>
+                            </div>
+                            <div class="room-content">
+                                <h4 class="title"><a href="room-details.html">Deluxe Family Rooms</a></h4>
+                                <p>Experience a serene stay in our beautifully designed Deluxe Room   perfect </p>
+                                <div class="room-meta">
+                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                </div>
+                                <div class="room-bottom">
+                                    <div class="price">$450<span>/Per Night</span></div>
+                                    <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Room Item -->
+                        <div class="luxivo-room-item style-one">
+                            <div class="room-image">
+                                <img src="/assets/images/home-one/room/roomg-img4.jpg" alt="room image">
+                                <div class="rate"><i class="fas fa-star"></i>4.9</div>
+                            </div>
+                            <div class="room-content">
+                                <h4 class="title"><a href="room-details.html">Double Suite Rooms</a></h4>
+                                <p>Experience a serene stay in our beautifully designed Deluxe Room   perfect </p>
+                                <div class="room-meta">
+                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                </div>
+                                <div class="room-bottom">
+                                    <div class="price">$690<span>/Per Night</span></div>
+                                    <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Room Item -->
+                        <div class="luxivo-room-item style-one">
+                            <div class="room-image">
+                                <img src="/assets/images/home-one/room/roomg-img2.jpg" alt="room image">
+                                <div class="rate"><i class="fas fa-star"></i>4.9</div>
+                            </div>
+                            <div class="room-content">
+                                <h4 class="title"><a href="room-details.html">Exclusive Deluxe Rooms</a></h4>
+                                <p>Experience a serene stay in our beautifully designed Deluxe Room   perfect </p>
+                                <div class="room-meta">
+                                    <span><i class="far fa-expand-arrows-alt"></i>250 sqm</span>
+                                    <span><i class="far fa-bed-alt"></i>3 Bed</span>
+                                    <span><i class="far fa-bath"></i>3 Bathroom</span>
+                                </div>
+                                <div class="room-bottom">
+                                    <div class="price">$750<span>/Per Night</span></div>
+                                    <a href="room-details.html" class="theme-btn style-two">VIEW DETAILS<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Room Section  ======-->
+            <!--======  Start Facilities Section  ======-->
+            <section class="luxivo-facilities_one pt-120 pb-100">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-5 col-lg-9">
+                            <!-- Luxivo Image Box -->
+                            <div class="luxivo-image-box">
+                                <div class="luxivo-image image_one" data-aos="fade-up" data-aos-duration="800">
+                                    <img src="/assets/images/home-one/gallery/fac-img1.jpg" alt="facilities image">
+                                    <div class="overlay"></div>
+                                    <div class="shape"><img src="/assets/images/home-one/gallery/f-shape.png" alt="shape"></div>
+                                </div>
+                                <div class="luxivo-image image_two" data-aos="fade-up" data-aos-duration="1000">
+                                    <img src="/assets/images/home-one/gallery/fac-img2.jpg" alt="facilities image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-9">
+                            <!-- Luxivo Content Box -->
+                            <div class="luxivo-content-box mt-5 mt-xl-0">
+                                <!-- Section Title -->
+                                <div class="section-title">
+                                    <span class="line d-block mb-10" data-aos="fade-up" data-aos-duration="800"><img src="/assets/images/home-one/gallery/d-line.png" alt="line"></span>
+                                    <span class="sub-title" data-aos="fade-up" data-aos-duration="1000">Hotel Facilities</span>
+                                    <h2 data-aos="fade-up" data-aos-duration="1200">Everything You Need for a Relaxed and Comfortable.</h2>
+                                </div>
+                                <p data-aos="fade-up" data-aos-duration="1400">Your safety and well-being are our highest priorities. We follow strict cleaning protocols, enhanced security measures, and round-the-clock monitoring to ensure you enjoy complete peace of mind throughout your stay with us.</p>
+                                <div class="iconic-box-wrapper">
+                                    <div class="row">
+                                        <div class="col-md-6 item-column">
+                                            <div class="luxivo-iconic-left-box style-two" data-aos="fade-up" data-aos-duration="1600">
+                                                <div class="icon">
+                                                    <img src="/assets/images/home-one/icon/icon3.png" alt="icon">
+                                                </div>
+                                                <div class="content">
+                                                    <h4>Gym Training Center</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 item-column">
+                                            <div class="luxivo-iconic-left-box style-two" data-aos="fade-up" data-aos-duration="1800">
+                                                <div class="icon">
+                                                    <img src="/assets/images/home-one/icon/icon4.png" alt="icon">
+                                                </div>
+                                                <div class="content">
+                                                    <h4>Restaurant & Bar</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="check-list style-one" data-aos="fade-up" data-aos-duration="2000">
+                                    <li><i class="fas fa-badge-check"></i>Prime locations with stunning views</li>
+                                    <li><i class="fas fa-badge-check"></i>Handpicked room designs for modern living</li>
+                                    <li><i class="fas fa-badge-check"></i>Handpicked room designs for modern livings</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Facilities Section  ======-->
+            <!--======  Start Features Section  ======-->
+            <section class="luxivo-features_one bg_cover pt-110 pb-120" data-src="/assets/images/home-one/bg/feature-bg.jpg">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6">
+                            <!-- Section Title -->
+                            <div class="section-title text-white text-center mb-60">
+                                <span class="line d-block mb-10" data-aos="fade-up" data-aos-duration="800"><img src="/assets/images/home-one/gallery/d-line-wt.png" alt="line"></span>
+                                <span class="sub-title" data-aos="fade-up" data-aos-duration="1000">Discover our All</span>
+                                <h2 data-aos="fade-up" data-aos-duration="1200">Featured Amenities</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="features-slider" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="luxivo-feature-item style-one">
+                            <div class="icon">
+                                <img src="/assets/images/home-one/icon/icon-5.png" class="main-icon" alt="icon">
+                            </div>
+                            <div class="content">
+                                <h4>Air condition</h4>
+                                <p>Our rooms and suites are equipped with modern, energy-efficient air conditioning systems to ensure the perfect</p>
+                                <a href="room-details.html" class="theme-btn style-two">Book Now<i class="far fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="luxivo-feature-item style-one">
+                            <div class="icon">
+                                <img src="/assets/images/home-one/icon/icon-6.png" alt="icon">
+                            </div>
+                            <div class="content">
+                                <h4>Speed Internet</h4>
+                                <p>Enjoy ultra-fast, reliable Wi-Fi throughout the property whether you're working Your remotely, streaming your favorite</p>
+                                <a href="room-details.html" class="theme-btn style-two">Book Now<i class="far fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="luxivo-feature-item style-one">
+                            <div class="icon">
+                                <img src="/assets/images/home-one/icon/icon-7.png" alt="icon">
+                            </div>
+                            <div class="content">
+                                <h4>Smart Lock</h4>
+                                <p>Experience keyless entry with our state of the-art smart locks. Enjoy 24/7 access to your room with a personalized digital</p>
+                                <a href="room-details.html" class="theme-btn style-two">Book Now<i class="far fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="luxivo-feature-item style-one">
+                            <div class="icon">
+                                <img src="/assets/images/home-one/icon/icon-8.png" alt="icon">
+                            </div>
+                            <div class="content">
+                                <h4>Gym Center</h4>
+                                <p>Our fully-equipped fitness center offers the latest in cardio and strength training equipment. Whether you're an early </p>
+                                <a href="room-details.html" class="theme-btn style-two">Book Now<i class="far fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="luxivo-feature-item style-one">
+                            <div class="icon">
+                                <img src="/assets/images/home-one/icon/icon-6.png" alt="icon">
+                            </div>
+                            <div class="content">
+                                <h4>Speed Internet</h4>
+                                <p>Enjoy ultra-fast, reliable Wi-Fi throughout the property whether you're working Your remotely, streaming your favorite</p>
+                                <a href="room-details.html" class="theme-btn style-two">Book Now<i class="far fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Arrows -->
+                    <div class="features-arrows mt-60" data-aos="fade-up" data-aos-duration="1200"></div>
+                </div>
+            </section><!--======  End Features Section  ======-->
+            <!--======  Start Offer Section  ======-->
+            <section class="luxivo-offer-sec pt-110 pb-60">
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-lg-8">
+                            <!-- Section Title -->
+                            <div class="section-title text-lg-start text-center mb-50">
+                                <span class="line d-block mb-10" data-aos="fade-up" data-aos-duration="800"><img src="/assets/images/home-one/gallery/d-line.png" alt="line"></span>
+                                <span class="sub-title" data-aos="fade-up" data-aos-duration="1000">Special Offer</span>
+                                <h2 data-aos="fade-up" data-aos-duration="1200">Best Offers At our Hotel</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <!-- Luxivo Button -->
+                            <div class="luxivo-button text-lg-end text-center mb-60" data-aos="fade-up" data-aos-duration="1000">
+                                <a href="offer.html" class="theme-btn style-one">VIEW ALL OFFERS<i class="far fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Luxivo Offer Wrapper -->
+                    <div class="luxivo-offer-wrapper">
+                        <!-- Luxivo Offer Item -->
+                        <div class="luxivo-offer-item style-one mb-60" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="content">
+                                        <div class="shape"><img src="/assets/images/home-one/gallery/off-shape.png" alt="shape"></div>
+                                        <h3 class="title"><a href="offer-details.html">Make a date to catch up on missed celebrations and enjoy</a></h3>
+                                        <div class="ratings">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>4.9 Reviews</span>
+                                        </div>
+                                        <p>Discover amazing savings and special packages tailored to make your stay unforgettable. Book now to enjoy exclusive discounts</p>
+                                        <div class="offer-footer">
+                                            <div class="price">$350<span>Expiry: 31 Aug</span></div>
+                                            <a href="offer-details.html" class="theme-btn style-two">VIEW OFFER <i class="far fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="thumbnail">
+                                        <img src="/assets/images/home-one/gallery/offer-img1.jpg" alt="offer image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Offer Item -->
+                        <div class="luxivo-offer-item style-one mb-60" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="content">
+                                        <div class="shape"><img src="/assets/images/home-one/gallery/off-shape.png" alt="shape"></div>
+                                        <h3 class="title"><a href="offer-details.html">Make a date to catch up on missed celebrations and enjoy</a></h3>
+                                        <div class="ratings">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>4.9 Reviews</span>
+                                        </div>
+                                        <p>Enjoy exclusive discounts on rooms and suites with our limited-time offers. Book today and experience modern luxury and comfort at</p>
+                                        <div class="offer-footer">
+                                            <div class="price">$350<span>Expiry: 31 Aug</span></div>
+                                            <a href="offer-details.html" class="theme-btn style-two">VIEW OFFER <i class="far fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="thumbnail">
+                                        <img src="/assets/images/home-one/gallery/offer-img2.jpg" alt="offer image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Offer Item -->
+                        <div class="luxivo-offer-item style-one mb-60" data-aos="fade-up" data-aos-duration="1400">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="content">
+                                        <div class="shape"><img src="/assets/images/home-one/gallery/off-shape.png" alt="shape"></div>
+                                        <h3 class="title"><a href="offer-details.html">Make a date to catch up on missed celebrations and enjoy</a></h3>
+                                        <div class="ratings">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>4.9 Reviews</span>
+                                        </div>
+                                        <p>Save big on your next getaway with our seasonal offers. Whether it’s a weekend escape or an extended stay, we have the perfect</p>
+                                        <div class="offer-footer">
+                                            <div class="price">$350<span>Expiry: 31 Aug</span></div>
+                                            <a href="offer-details.html" class="theme-btn style-two">VIEW OFFER <i class="far fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="thumbnail">
+                                        <img src="/assets/images/home-one/gallery/offer-img3.jpg" alt="offer image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Offer Section  ======-->
+            <!--======  Start Counter Section  ======-->
+            <section class="luxivo-counter_one bg_cover pt-110 pb-70" data-src="/assets/images/home-one/bg/counter-bg.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <!-- Luxivo Counter Item -->
+                            <div class="luxivo-counter-item style-one mb-40" data-aos="fade-up" data-aos-duration="800">
+                                <div class="content">
+                                    <h2><span class="counter">635</span>+</h2>
+                                    <p>Luxury Rooms</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <!-- Luxivo Counter Item -->
+                            <div class="luxivo-counter-item style-one mb-40" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="content">
+                                    <h2><span class="counter">85</span>k+</h2>
+                                    <p>Happy Guest</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <!-- Luxivo Counter Item -->
+                            <div class="luxivo-counter-item style-one mb-40" data-aos="fade-up" data-aos-duration="1200">
+                                <div class="content">
+                                    <h2><span class="counter">2.3</span>k+</h2>
+                                    <p>Five Star Ratings</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <!-- Luxivo Counter Item -->
+                            <div class="luxivo-counter-item style-one mb-40" data-aos="fade-up" data-aos-duration="1400">
+                                <div class="content">
+                                    <h2><span class="counter">2.8</span>m</h2>
+                                    <p>Served Breakfast</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Counter Section  ======-->
+            <!--======  Start Testimonial Section  ======-->
+            <section class="luxivo-testimonial-one pt-110 pb-120">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6">
+                            <!-- Section Title -->
+                            <div class="section-title mb-50 text-center">
+                                <span class="line d-block mb-10" data-aos="fade-up" data-aos-duration="800"><img src="/assets/images/home-one/gallery/d-line.png" alt="line"></span>
+                                <span class="sub-title" data-aos="fade-up" data-aos-duration="1000">Testimonial</span>
+                                <h2 data-aos="fade-up" data-aos-duration="1200">Check Our Latest Blog Post</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Luxivo Slider  -->
+                    <div class="testimonial-slider" data-aos="fade-up" data-aos-duration="1000">
+                        <!-- Luxivo Testimonial Item -->
+                        <div class="luxivo-testimonial-item style-one">
+                            <div class="testimonial-content">
+                                <div class="ratings-quote-wrap">
+                                    <div class="quote">
+                                        <i class="fas fa-quote-left"></i>
+                                    </div>
+                                    <div class="ratings">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>"Immerse yourself in luxury and freshness with stunning ocean views and beach just a few steps away. Enjoy the sweet breath of the sea with elegant and luxurious rooms, opposite the beach voted by Forbes magazine"</p>
+                                <div class="author-thumb-item">
+                                    <div class="author-thumb">
+                                        <img src="/assets/images/home-one/testimonial/author-img1.jpg" alt="author image">
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Brooklyn Simmons</h5>
+                                        <span class="position">CEO,AB Tech</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Testimonial Item -->
+                        <div class="luxivo-testimonial-item style-one">
+                            <div class="testimonial-content">
+                                <div class="ratings-quote-wrap">
+                                    <div class="quote">
+                                        <i class="fas fa-quote-left"></i>
+                                    </div>
+                                    <div class="ratings">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>"Immerse yourself in luxury and freshness with stunning ocean views and beach just a few steps away. Enjoy the sweet breath of the sea with elegant and luxurious rooms, opposite the beach voted by Forbes magazine"</p>
+                                <div class="author-thumb-item">
+                                    <div class="author-thumb">
+                                        <img src="/assets/images/home-one/testimonial/author-img2.jpg" alt="author image">
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Sarah Taylor</h5>
+                                        <span class="position">CEO,AB Tech</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Testimonial Item -->
+                        <div class="luxivo-testimonial-item style-one">
+                            <div class="testimonial-content">
+                                <div class="ratings-quote-wrap">
+                                    <div class="quote">
+                                        <i class="fas fa-quote-left"></i>
+                                    </div>
+                                    <div class="ratings">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>"Immerse yourself in luxury and freshness with stunning ocean views and beach just a few steps away. Enjoy the sweet breath of the sea with elegant and luxurious rooms, opposite the beach voted by Forbes magazine"</p>
+                                <div class="author-thumb-item">
+                                    <div class="author-thumb">
+                                        <img src="/assets/images/home-one/testimonial/author-img3.jpg" alt="author image">
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Amanda Nicole</h5>
+                                        <span class="position">CEO,AB Tech</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Testimonial Section  ======-->
+            <!--======  Start Contact Section  ======-->
+            <section class="luxivo-contact_one pt-60 pb-60">
+                <!-- Contact Left -->
+                <div class="contact-bg-left bg_cover" data-src="/assets/images/home-one/contact/contact-bg.jpg" data-aos="fade-up" data-aos-duration="800">
+                    <div class="luxivo-info-box">
+                        <div class="content">
+                            <span class="line d-block mb-10"><img src="/assets/images/home-one/contact/d-line.png" alt="line"></span>
+                            <span>Call us for any inquiry</span>
+                            <h3><a href="tel:(601)23650543">(601) 236 50 543</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Bg -->
+                <div class="contact-bg-right bg_cover" data-src="/assets/images/home-one/contact/contact-bg-two.png"></div>
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div class="col-xl-7">
+                            <!-- Booking Wrapper -->
+                            <div class="booking-wrapper">
+                                <div class="section-title mb-50">
+                                    <span class="line d-block mb-10" data-aos="fade-up" data-aos-duration="800"><img src="/assets/images/home-one/gallery/d-line.png" alt="line"></span>
+                                    <span class="sub-title" data-aos="fade-up" data-aos-duration="1000">Contact us</span>
+                                    <h2 data-aos="fade-up" data-aos-duration="1200">We’re Here to Make Your Stay Unforgettable</h2>
+                                    <p data-aos="fade-up" data-aos-duration="1400">Have questions, need help with a reservation, or want to plan a custom experience? Our team is just a message away.</p>
+                                </div>
+                                @if (TempData["Success"] != null)
+                                {
+                                    <div class="alert alert-success" role="alert">@TempData["Success"]</div>
+                                }
+                                @if (TempData["Error"] != null)
+                                {
+                                    <div class="alert alert-danger" role="alert">@TempData["Error"]</div>
+                                }
+                                <form class="booking-form" method="post" asp-page-handler="Booking" data-aos="fade-up" data-aos-duration="1600">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" class="form_control" placeholder="Your Name" name="name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input type="email" class="form_control" placeholder="Your Email" name="email" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Check In</label>
+                                                <input type="date" class="form_control" name="CheckIn" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Check Out</label>
+                                                <input type="date" class="form_control" name="CheckOut" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label>Message</label>
+                                            <div class="form-group">
+                                                <textarea name="message" class="form_control" rows="4" placeholder="Write Message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <button class="theme-btn style-one">CHECK AVAILABILITY <i class="far fa-arrow-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Contact Section  ======-->
+            <!--======  Start Blog Section  ======-->
+            <section class="luxivo-blog_one pt-115 pb-80">
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-xl-6 col-lg-8">
+                            <!-- Section Title -->
+                            <div class="section-title mb-50 text-center text-lg-start">
+                                <span class="line d-block mb-10" data-aos="fade-up" data-aos-duration="800"><img src="/assets/images/home-one/gallery/d-line.png" alt="line"></span>
+                                <span class="sub-title" data-aos="fade-up" data-aos-duration="1000">NEWS & BLOG</span>
+                                <h2 data-aos="fade-up" data-aos-duration="1200">Check Our Latest Blog Post</h2>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-4">
+                            <!-- Luxivo Button -->
+                            <div class="luxivo-button mb-60 text-center text-lg-end" data-aos="fade-up" data-aos-duration="800">
+                                <a href="blog-grid.html" class="theme-btn style-one">VIEW ALL POST<i class="far fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <!-- Luxivo Blog Post -->
+                            <div class="luxivo-blog-post-item style-one mb-40" data-aos="fade-up" data-aos-duration="800">
+                                <div class="post-thumbnail">
+                                    <img src="/assets/images/home-one/blog/blog-img1.jpg" alt="Blog Image">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i>By<a href="#">Admin</a></span>
+                                        <span><i class="far fa-comments"></i><a href="#">(03) Comments</a></span>
+                                    </div>
+                                    <h4><a href="blog-details.html">Inside the Luxury What Makes Our Hotel Unique</a></h4>
+                                    <a href="blog-details.html" class="theme-btn style-two">Read More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <!-- Luxivo Blog Post -->
+                            <div class="luxivo-blog-post-item style-one mb-40" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="post-thumbnail">
+                                    <img src="/assets/images/home-one/blog/blog-img2.jpg" alt="Blog Image">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i>By<a href="#">Admin</a></span>
+                                        <span><i class="far fa-comments"></i><a href="#">(03) Comments</a></span>
+                                    </div>
+                                    <h4><a href="blog-details.html">Unveiling the Charm Inside Our Signature Experience</a></h4>
+                                    <a href="blog-details.html" class="theme-btn style-two">Read More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <!-- Luxivo Blog Post -->
+                            <div class="luxivo-blog-post-item style-one mb-40" data-aos="fade-up" data-aos-duration="1200">
+                                <div class="post-thumbnail">
+                                    <img src="/assets/images/home-one/blog/blog-img3.jpg" alt="Blog Image">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span><i class="far fa-user"></i>By<a href="#">Admin</a></span>
+                                        <span><i class="far fa-comments"></i><a href="#">(03) Comments</a></span>
+                                    </div>
+                                    <h4><a href="blog-details.html">Where Luxury Meets Personality Our Hotel Story</a></h4>
+                                    <a href="blog-details.html" class="theme-btn style-two">Read More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Blog Section  ======-->
+            <!--======  Start Instagram Section  ======-->
+            <section class="luxivo-instagram-sec pt-110 pb-120">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-box text-center mb-55" data-aos="fade-up" data-aos-duration="800">
+                                <h5>Follow Instagram</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <!-- Luxivo Gallery Slider -->
+                    <div class="gallery-slider" data-aos="fade-up" data-aos-duration="1000">
+                        <!-- Luxivo Gallery Item -->
+                        <div class="luxivo-gallery-item style-one">
+                            <div class="thumbnail">
+                                <img src="/assets/images/home-one/gallery/gallery-img1.jpg" alt="gallery-img">
+                                <div class="hover-content">
+                                    <a href="https://www.instagram.com/" target="_blank" class="icon-btn"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Gallery Item -->
+                        <div class="luxivo-gallery-item style-one">
+                            <div class="thumbnail">
+                                <img src="/assets/images/home-one/gallery/gallery-img2.jpg" alt="gallery-img">
+                                <div class="hover-content">
+                                    <a href="https://www.instagram.com/" target="_blank" class="icon-btn"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Gallery Item -->
+                        <div class="luxivo-gallery-item style-one">
+                            <div class="thumbnail">
+                                <img src="/assets/images/home-one/gallery/gallery-img3.jpg" alt="gallery-img">
+                                <div class="hover-content">
+                                    <a href="https://www.instagram.com/" target="_blank" class="icon-btn"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Gallery Item -->
+                        <div class="luxivo-gallery-item style-one">
+                            <div class="thumbnail">
+                                <img src="/assets/images/home-one/gallery/gallery-img4.jpg" alt="gallery-img">
+                                <div class="hover-content">
+                                    <a href="https://www.instagram.com/" target="_blank" class="icon-btn"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Gallery Item -->
+                        <div class="luxivo-gallery-item style-one">
+                            <div class="thumbnail">
+                                <img src="/assets/images/home-one/gallery/gallery-img5.jpg" alt="gallery-img">
+                                <div class="hover-content">
+                                    <a href="https://www.instagram.com/" target="_blank" class="icon-btn"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Gallery Item -->
+                        <div class="luxivo-gallery-item style-one">
+                            <div class="thumbnail">
+                                <img src="/assets/images/home-one/gallery/gallery-img6.jpg" alt="gallery-img">
+                                <div class="hover-content">
+                                    <a href="https://www.instagram.com/" target="_blank" class="icon-btn"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Luxivo Gallery Item -->
+                        <div class="luxivo-gallery-item style-one">
+                            <div class="thumbnail">
+                                <img src="/assets/images/home-one/gallery/gallery-img3.jpg" alt="gallery-img">
+                                <div class="hover-content">
+                                    <a href="https://www.instagram.com/" target="_blank" class="icon-btn"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Instagram Section  ======-->
+        </main>
+        

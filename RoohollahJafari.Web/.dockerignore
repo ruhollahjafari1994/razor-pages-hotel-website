@@ -1,0 +1,6 @@
+**/.vs/
+**/.idea/
+bin/
+obj/
+*.md
+Properties/launchSettings.json

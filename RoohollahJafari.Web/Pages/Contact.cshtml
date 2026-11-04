@@ -1,0 +1,116 @@
+@page "/contact.html"
+@model RoohollahJafari.Web.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact - Roohollah Jafari";
+    ViewData["Description"] = "Contact - Roohollah Jafari hotel & resort.";
+}
+
+
+        <main>
+            <!--======  Start Page Hero Section  ======-->
+            <section class="page-hero bg_cover p-r z-1" data-src="/assets/images/innerpage/bg/page-bg.jpg">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!--=== Page Content ===-->
+                            <div class="page-content text-center">
+                                <h1>Contact Us</h1>
+                                <h6>We will help you to solve any problem</h6>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>Contact Us</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Page Hero Section  ======-->
+            <!--======  Start Contact Section  ======-->
+            <section class="luxivo-contact-sec pt-110 pb-120">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <!--=== Text Box ===-->
+                            <div class="text-box text-center mb-50">
+                                <h3 class="mb-30" data-aos="fade-up" data-aos-duration="800">Need help with your online booking,
+have a question or need more information? Just drop us a line!</h3>
+                                <p data-aos="fade-up" data-aos-duration="1000">After the model, myocardinate cross-platform intellectual capital quickly.  After maintenance, appropriately build interactive infrastructures.  Holistically support independent</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <!--=== Contact Info Wrapper ===-->
+                            <div class="contact-info-wrapper mb-5 mb-xl-0" data-aos="fade-up" data-aos-duration="800">
+                                <div class="contact-info-box">
+                                    <div class="luxivo-info-box text-center">
+                                        <div class="content">
+                                            <h3>LOCATION:</h3>
+                                            <p>3949 State 38b Rte <br> Newark Valley, New York(NY), 139</p>
+                                        </div>
+                                    </div>
+                                    <div class="luxivo-info-box text-center">
+                                        <div class="content">
+                                            <h3>CONTACT:</h3>
+                                            <p><a href="tel:+99(0)4325058236">+99 (0) 432 505 8236</a></p>
+                                            <p><a href="mailto:info@@roohollah-jafari.ir">info@@roohollah-jafari.ir</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="luxivo-info-box text-center">
+                                        <div class="content">
+                                            <h3 class="mb-20">SOCIAL:</h3>
+                                            <div class="social-box">
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <!--=== Contact Wrapper ===-->
+                            <div class="contact-form-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                                <h3 class="mb-50">Fill up the form if you have any question</h3>
+                                @if (TempData["Success"] != null)
+                                {
+                                    <div class="alert alert-success" role="alert">@TempData["Success"]</div>
+                                }
+                                @if (TempData["Error"] != null)
+                                {
+                                    <div class="alert alert-danger" role="alert">@TempData["Error"]</div>
+                                }
+                                <form class="contact-form" method="post">
+                                    <div class="form-gorup">
+                                        <input type="text" class="form_control" placeholder="Your Name*" name="name" required>
+                                    </div>
+                                    <div class="form-gorup">
+                                        <input type="email" class="form_control" placeholder="Your Email*" name="email" required>
+                                    </div>
+                                    <div class="form-gorup">
+                                        <input type="text" class="form_control" placeholder="Your Phone*" name="phone" required>
+                                    </div>
+                                    <div class="form-gorup">
+                                        <textarea class="form_control" name="message" placeholder="Your Message*" rows="4"></textarea>
+                                    </div>
+                                    <div class="form-gorup">
+                                        <button class="theme-btn style-one">SEND A MESSAGE<i class="far fa-arrow-right"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--======  End Contact Section  ======-->
+            <!--======  Start Map Section  ======-->
+            <section class="luxivo-map-sec">
+                <!--=== Map Box ===-->
+                <div class="map-box mb-5 mb-xl-0" data-aos="fade-up" data-aos-duration="1200">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d96777.16150026117!2d-74.00840582560909!3d40.71171357405996!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1706508986625!5m2!1sen!2sbd" loading="lazy">
+                    </iframe>
+                </div>
+            </section>
+        </main>
+        

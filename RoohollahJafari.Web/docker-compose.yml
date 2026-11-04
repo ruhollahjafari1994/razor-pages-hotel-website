@@ -1,0 +1,53 @@
+services:
+  # ---------------- PostgreSQL database ----------------
+  db:
+    image: postgres:17-alpine
+    container_name: roohollah-db
+    environment:
+      POSTGRES_USER: roohollah
+      POSTGRES_PASSWORD: Roohollah_Dev_2026
+      POSTGRES_DB: roohollah_jafari
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U roohollah -d roohollah_jafari"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  # ---------------- ASP.NET Core Razor Pages ----------------
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: roohollah-web
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      Database__Provider: Postgres
+      ConnectionStrings__Default: "Host=db;Port=5432;Database=roohollah_jafari;Username=roohollah;Password=Roohollah_Dev_2026"
+    ports:
+      - "5088:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ---------------- SQL Server alternative ----------------
+  # Uncomment the block below and switch the web environment variables
+  # (Database__Provider: SqlServer + its connection string) to run on SQL Server.
+  #
+  # db-mssql:
+  #   image: mcr.microsoft.com/mssql/server:2022-latest
+  #   container_name: roohollah-db-mssql
+  #   environment:
+  #     ACCEPT_EULA: "Y"
+  #     MSSQL_SA_PASSWORD: "Roohollah_Dev_2026"
+  #   ports:
+  #     - "1433:1433"
+  #   restart: unless-stopped
+
+volumes:
+  pgdata:

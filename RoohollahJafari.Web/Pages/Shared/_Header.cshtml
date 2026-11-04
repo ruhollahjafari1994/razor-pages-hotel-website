@@ -1,0 +1,131 @@
+<!--=== Start  Header Area  ===-->
+        <header class="@ViewData["HeaderClass"]">
+            @if (ViewData["TopBar"] is bool topBar && topBar)
+        {
+<!--====  Header Top Bar  ===-->
+            <div class="header-top-bar d-none d-lg-block">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="top-left">
+                                <span><a href="tel:+99(0)4325058236">Tel.+99 (0) 432 505 8236</a></span>
+                                <span><a href="mailto:info@@roohollah-jafari.ir">info@@roohollah-jafari.ir</a></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="top-right">
+                                <span><i class="far fa-comments"></i>Faq</span>
+                                <span><i class="far fa-headphones"></i>Support</span>
+                                <div class="luxivo-language-dropdown">
+                                    <a href="javascript:void(0)"><i class="far fa-globe"></i>English <i class="far fa-angle-down"></i></a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="javascript:void(0)">English</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Russian</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">French</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <!--====  Header Navigation  ===-->
+            <div class="header-navigation">
+                <div class="container-fluid">
+                    <!--====  Primary Menu  ===-->
+                    <div class="primary-menu">
+                        <!--====  Site Branding  ===-->
+                        <div class="site-branding">
+                            <a href="index.html" class="brand-logo"><img src="@ViewData["BrandLogo"]" alt="Roohollah Jafari"></a>
+                        </div>
+                        <!--=== Main Menu ===-->
+                        <div class="theme-nav-menu">
+                            <!--=== Menu Top ===-->
+                            <div class="theme-menu-top d-block d-xl-none">
+                                <div class="site-branding">
+                                    <a href="index.html" class="brand-logo"><img src="/assets/images/logo/logo-main.png" alt="Roohollah Jafari"></a>
+                                </div>
+                            </div>
+                            <!--=== Main Menu ===-->
+                            <nav class="main-menu">
+                                <ul>
+                                    <li class="menu-item has-children"><a href="index.html">Home</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="index.html">Home One</a></li>
+                                            <li><a href="index-2.html">Home Two</a></li>
+                                            <li><a href="index-3.html">Home Three</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item has-children"><a href="#">Rooms & Suites</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="rooms.html">Rooms Grid</a></li>
+                                            <li><a href="rooms-2.html">Rooms List</a></li>
+                                            <li><a href="room-details.html">Room Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item has-children"><a href="#">Pages</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="services.html">Services</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="services.html">Services</a></li>
+                                                    <li><a href="service-details.html">Service Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="offer.html">Offers</a></li>
+                                            <li><a href="offer-details.html">Offer Details</a></li>
+                                            <li><a href="gallery.html">Our Gallery</a></li>
+                                            <li><a href="team.html">Our Team</a></li>
+                                            <li><a href="team-details.html">Team Details</a></li>
+                                            <li><a href="pricing.html">Pricing</a></li>
+                                            <li><a href="faqs.html">Faqs</a></li>
+                                            <li><a href="404.html">404</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item has-children"><a href="#">News</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="blog-grid.html">Blog Grid</a></li>
+                                            <li><a href="blog-standard.html">Blog Standard</a></li>
+                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <!--=== Nav Button ===-->
+                            <div class="theme-nav-button mt-20 d-block d-md-none">
+                                <a href="contact.html" class="theme-btn style-one">Get A Quote<i class="far fa-arrow-right"></i></a>
+                            </div>
+                            <!--===  Menu Bottom ===-->
+                            <div class="theme-menu-bottom mt-50 d-block d-xl-none">
+                                <h5>Follow Us</h5>
+                                <ul class="social-link">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--=== Header Nav Right ===-->
+                        <div class="nav-right-item">
+                            <div class="nav-button d-none d-md-block">
+                                <a href="contact.html" class="theme-btn style-one">Get A Quote<i class="far fa-arrow-right"></i></a>
+                            </div>
+                            <div class="navbar-toggler">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </header><!--=== End  Header Area  ===-->
