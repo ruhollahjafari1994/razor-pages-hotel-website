@@ -1,0 +1,33 @@
+/* =====================================================================
+   custom.css — fixes & overrides for the Roohollah Jafari hotel website
+   Loaded AFTER style.css so these rules win over the template.
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   FIX: the hero intro paragraph ("Immerse yourself in luxury ...")
+   was stacking BEHIND the floating hero images (they have z-index:1,
+   the text had no stacking context) and, on desktop widths between
+   ~1200px and ~1900px, the centred text column overlapped them.
+
+   1) keep the text on top at every width;
+   2) in the affected width band, hug the images to the edges and cap
+      their size so they never collide with the text column.
+   --------------------------------------------------------------------- */
+.luxivo-hero_one .text-box {
+    position: relative;
+    z-index: 3;
+}
+
+@media (min-width: 1200px) and (max-width: 1900px) {
+    .luxivo-hero_one .hero-image {
+        max-width: 300px;
+    }
+    .luxivo-hero_one .hero-image.hero-image_one {
+        left: 30px;
+        max-width: 260px;
+    }
+    .luxivo-hero_one .hero-image.hero-image_two {
+        right: 30px;
+        max-width: 240px;
+    }
+}
