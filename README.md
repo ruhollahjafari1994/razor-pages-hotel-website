@@ -5,8 +5,9 @@
 **A production-ready <b>hotel booking website</b> built with ASP.NET Core Razor Pages, EF Core,
 PostgreSQL and Docker — with working forms, a live admin dashboard and a REST API.**
 
-[Quick Start](#-quick-start) · [Screenshots](#-screenshots) · [Features](#-features) · [REST API](#-rest-api) · [FAQ](#-faq) · [فارسی](README.fa.md)
+[🌐 Live Demo](https://ruhollahjafari1994.github.io/razor-pages-hotel-website/) · [Quick Start](#-quick-start) · [Screenshots](#-screenshots) · [Features](#-features) · [REST API](#-rest-api) · [FAQ](#-faq) · [فارسی](README.fa.md)
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-2ea44f?logo=githubpages&logoColor=white)](https://ruhollahjafari1994.github.io/razor-pages-hotel-website/)
 ![:.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![Razor Pages](https://img.shields.io/badge/Razor_Pages-ready-512BD4)
 ![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)
@@ -57,6 +58,10 @@ git clone https://github.com/ruhollahjafari1994/razor-pages-hotel-website.git
 cd razor-pages-hotel-website/RoohollahJafari.Web
 docker compose up -d --build
 ```
+
+> 🌐 **Prefer just looking?** The static site is live at
+> <https://ruhollahjafari1994.github.io/razor-pages-hotel-website/>
+> — and the ready-to-host package is in [Releases](https://github.com/ruhollahjafari1994/razor-pages-hotel-website/releases/tag/v1.0-static) (unzip → upload to any hosting).
 
 Database schema is created and seeded automatically — no migration commands needed.
 

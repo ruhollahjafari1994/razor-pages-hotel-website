@@ -6,7 +6,7 @@
 
 **وب‌سایت هتل آماده تولید با فرم‌های واقعی، پنل ادمین زنده و REST API — کاملاً داکرایز شده.**
 
-[شروع سریع](#-شروع-سریع) · [اسکرین‌شات‌ها](#-اسکرین‌شات‌ها) · [REST API](#rest-api) · [English](README.md)
+[🌐 دموی زنده](https://ruhollahjafari1994.github.io/razor-pages-hotel-website/) · [شروع سریع](#-شروع-سریع) · [اسکرین‌شات‌ها](#-اسکرین‌شات‌ها) · [REST API](#rest-api) · [English](README.md)
 
 </div>
 
@@ -53,11 +53,16 @@
 
 ## 🚀 شروع سریع
 
+**شروع سریع:**
+
 ```bash
 git clone https://github.com/ruhollahjafari1994/razor-pages-hotel-website.git
 cd razor-pages-hotel-website/RoohollahJafari.Web
 docker compose up -d --build
 ```
+
+> نسخه استاتیک آنلاین (GitHub Pages): <https://ruhollahjafari1994.github.io/razor-pages-hotel-website/>
+> برای هاستینگ شخصی، فایل ZIP را از [Releases](https://github.com/ruhollahjafari1994/razor-pages-hotel-website/releases/tag/v1.0-static) دانلود کنید.
 
 تمام — جدول‌ها خودکار ساخته و seed می‌شوند.
 

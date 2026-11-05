@@ -14,3 +14,7 @@ RoohollahJafari.Web/obj/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# static export artifacts
+/static-site/
+/*.zip
