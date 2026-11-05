@@ -79,6 +79,29 @@ docker compose logs -f     # لاگ‌ها
 docker compose down        # توقف (-v دیتابیس را هم پاک می‌کند)
 ```
 
+### ⭐ اجرا با Visual Studio + SQL Server (ذخیره واقعی دیتا، دیباگ با F5)
+
+1. فایل **`RoohollahJafari.sln`** رو در Visual Studio 2022/2026 باز کنید.
+2. پروفایل **`http`** رو انتخاب و **F5** بزنید → <http://localhost:5000>.
+3. در اولین اجرا، اپلیکیشن دیتابیس **`RoohollahJafariDb`** رو به‌صورت **خودکار** در
+   **SQL Server LocalDB** (همراه ویژوال استودیو) می‌سازد و داده نمونه رو seed می‌کنه —
+   نه به SSMS نیازه، نه دستور مایگریشن.
+
+- هر فرم رزرو/تماس که بفرستید در **SQL Server** ذخیره می‌شه → در
+  `/admin/messages` یا `/api/bookings` زنده ببینیدش.
+- تنظیمات: `appsettings.Development.json` (پرووایدر `SqlServer` و
+  `Server=(localdb)\MSSQLLocalDB`).
+- مشاهده دیتا در ویژوال استودیو: **Server Explorer → Connect → SQL Server →
+  `(localdb)\MSSQLLocalDB` → databases → `RoohollahJafariDb` → Tables**
+  یا از ترمینال:
+
+  ```bash
+  sqlcmd -S "(localdb)\MSSQLLocalDB" -d RoohollahJafariDb -Q "SELECT * FROM BookingRequests"
+  ```
+
+- پورت `5000` (ویژوال استودیو) و `5088` (داکر) با هم تداخلی ندارن؛ اما دیتابیس‌های
+  **جداگانه‌ای** دارن (LocalDB در مقابل کانتینر PostgreSQL).
+
 ## 🔌 REST API
 
 | متد | مسیر | توضیح |

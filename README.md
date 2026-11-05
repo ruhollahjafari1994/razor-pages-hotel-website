@@ -89,6 +89,28 @@ dotnet run
 ```
 </details>
 
+<details>
+<summary><b>⭐ Run in Visual Studio with SQL Server (real data, F5 debugging)</b></summary>
+
+1. Open **`RoohollahJafari.sln`** in Visual Studio 2022/2026.
+2. Select the **`http`** profile and press **F5** → <http://localhost:5000>.
+3. On first run the app **creates and seeds `RoohollahJafariDb` automatically** in
+   **SQL Server LocalDB** (ships with Visual Studio) — no SSMS setup or migration commands needed.
+
+- Submit any booking / contact form → the row is saved to **SQL Server** → see it live at
+  `/admin/messages` or via `/api/bookings`.
+- Config lives in `appsettings.Development.json` (`Database__Provider = SqlServer`,
+  `Server=(localdb)\MSSQLLocalDB`).
+- Browse the data in Visual Studio: **Server Explorer → Connect → SQL Server →
+  `(localdb)\MSSQLLocalDB` → databases → `RoohollahJafariDb` → Tables**, or from a terminal:
+
+  ```bash
+  sqlcmd -S "(localdb)\MSSQLLocalDB" -d RoohollahJafariDb -Q "SELECT * FROM BookingRequests"
+  ```
+- Port `5000` (Visual Studio) and `5088` (Docker) don't clash, so both can run side by side.
+  Note they use **separate databases** (LocalDB vs PostgreSQL container).
+</details>
+
 ## ✨ Features
 
 **Frontend — 21 pages**
